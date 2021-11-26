@@ -1,0 +1,76 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: 'Poppins', sans-serif;
+}
+
+.App h1 {
+  text-align: center;
+}
+
+.App .users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.App .users .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 45%;
+  margin: 10px;
+  padding: 10px 0px;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.App .users .user:hover .user_image img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.App .users .user:hover {
+  background-color: #e4e4e4;
+}
+
+.App .users .user .user_image {
+  margin-left: 20px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.App .users .user .user_image img {
+  width: 120px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.App .users .user .user_name {
+  margin-left: 50px;
+  font-size: 22px;
+}
+/*# sourceMappingURL=App.css.map */

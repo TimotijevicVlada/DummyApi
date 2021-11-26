@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import './style/App.css';
+import Users from './components/Users';
 
 function App() {
+
+  const APP_ID = "61a113efd238b67ee530d34b";
+
+
+  const [users, setUsers] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`https://dummyapi.io/data/v1/user`, {headers: {'app-id': APP_ID}});
+      const data = await response.json();
+      console.log(data);
+      setUsers(data.data)
+    } catch (err) {
+      console.log(err);
+    }
+    
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [])
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>DummyApi</h1>
+      <Users users={users}/>
     </div>
   );
 }

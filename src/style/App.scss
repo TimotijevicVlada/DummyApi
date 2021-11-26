@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.App {
+    font-family: 'Poppins', sans-serif;
+    h1 {
+        text-align: center;
+    }
+    .users {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        .user {
+            display: flex;
+            align-items: center;
+            width: 45%;
+            margin: 10px;
+            padding: 10px 0px;
+            border-radius: 15px;
+            background-color: whitesmoke;
+            cursor: pointer;
+            &:hover .user_image img {
+                transform: scale(1.2);
+            }
+            &:hover {
+                background-color: rgb(228, 228, 228);
+            }
+            .user_image {
+                margin-left: 20px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                img {
+                    width: 120px;
+                    transition: all 0.3s ease;
+                }
+            }
+            .user_name {
+                    margin-left: 50px;
+                    font-size: 22px;
+                }
+        }
+    }
+}
