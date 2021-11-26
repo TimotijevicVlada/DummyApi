@@ -1,20 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import './style/App.css';
-import Users from './components/Users';
+import Posts from './components/Posts';
+import PostsDetails from './components/PostsDetails';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
 
   const APP_ID = "61a113efd238b67ee530d34b";
 
-
-  const [users, setUsers] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [detailsId, setDetailsId] = useState("");
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://dummyapi.io/data/v1/user`, {headers: {'app-id': APP_ID}});
-      const data = await response.json();
-      console.log(data);
-      setUsers(data.data)
+        const response = await fetch(`https://dummyapi.io/data/v1/post`, {headers: {'app-id': APP_ID}});
+        const data = await response.json();
+        console.log(data.data);
+        setPosts(data.data)
+        setLoading(false);
     } catch (err) {
       console.log(err);
     }
@@ -28,10 +32,16 @@ function App() {
 
 
   return (
-    <div className="App">
-      <h1>DummyApi</h1>
-      <Users users={users}/>
-    </div>
+    <Router>
+      <div className="App">
+        <h1>DummyApi</h1>
+        <Routes>
+          <Route path="/" element={<Posts posts={posts} loading={loading} setDetailsId={setDetailsId}/>}/>
+          <Route path="/:id" element={<PostsDetails detailsId={detailsId} APP_ID={APP_ID}/>}/>
+        </Routes>
+      </div>
+    </Router>
+    
   );
 }
 
