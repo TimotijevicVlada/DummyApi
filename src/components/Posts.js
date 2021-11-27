@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 const Posts = ({ posts, loading, setDetailsId }) => {
 
-
-
   return (
     <div className="posts">
       {loading ? (
@@ -30,6 +28,10 @@ const Posts = ({ posts, loading, setDetailsId }) => {
                         <span>Keyword: {item.tags.map(word => (
                           <span key={word}>{word} / </span>
                         ))}</span>
+                    </div>
+                    <div className="likes">
+                      <i className="fas fa-heart"></i>
+                      <span>{item.likes}</span>
                     </div>
                     <div className="author">
                         <span>{new Date(item.publishDate).toDateString()}</span>

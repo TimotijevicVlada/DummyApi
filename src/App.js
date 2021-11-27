@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import './style/App.css';
 import Posts from './components/Posts';
 import PostsDetails from './components/PostsDetails';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -34,11 +36,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>DummyApi</h1>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Posts posts={posts} loading={loading} setDetailsId={setDetailsId}/>}/>
           <Route path="/:id" element={<PostsDetails detailsId={detailsId} APP_ID={APP_ID}/>}/>
         </Routes>
+        <Footer />
       </div>
     </Router>
     
