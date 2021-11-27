@@ -25,9 +25,9 @@ const Posts = ({ posts, loading, setDetailsId }) => {
                       <p>{item.text}</p>
                     </div>
                     <div className="keyword">
-                        <span>Keyword: {item.tags.map(word => (
-                          <span key={word}>{word} / </span>
-                        ))}</span>
+                        <div>{item.tags.map(word => (
+                          <span className="tags" key={word}>{word}</span>
+                        ))}</div>
                     </div>
                     <div className="likes">
                       <i className="fas fa-heart"></i>

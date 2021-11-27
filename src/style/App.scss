@@ -151,6 +151,12 @@
                 margin: 10px 0px;
                 span {
                   font-size: 14px;
+                  background-color: crimson;
+                  color: white;
+                  margin: 0px 5px;
+                  padding: 2px 5px;
+                  border-radius: 5px;
+                  
                 }
               }
               .likes {
@@ -174,8 +180,119 @@
     }
   }
   .post_details {
-    display: flex;
-    min-height: 85vh;
+    .details_skeleton {
+      min-height: 85vh;
+      display: flex;
+      .skeleton_img {
+        width: 40%;
+        padding: 20px 40px;
+        .skeleton_image {
+          height:  550px;
+          border-radius: 15px;
+          background-color: lightgray;
+        }
+      }
+      .skeleton_info {
+        width: 60%;
+        padding: 20px;
+        .skeleton_title_wrapper {
+          width: 100%;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px 0px;
+          .skeleton_title {
+            height: 25px;
+            width: 30%;
+            background-color: lightgray;
+            border-radius: 5px;
+          }
+        }
+        .skeleton_text_wrapper {
+          padding: 50px 0px;
+          .skeleton_text {
+            width: 100%;
+            height: 25px;
+            background-color: lightgray;
+            margin: 5px 0px;
+            border-radius: 5px;
+          }
+        }
+        .skeleton_author {
+          display: flex;
+          align-items: center;
+          .skeleton_author_image {
+            width: 120px;
+            height: 120px;
+            background-color: lightgray;
+            border-radius: 50%;
+            margin-right: 20px;
+          }
+          .skeleton_author_name {
+            width: 30%;
+            height: 25px;
+            background-color: lightgray;
+            border-radius: 5px;
+          }
+        }
+        .skeleton_tags {
+          display: flex;
+          padding: 20px 0px;
+          .skeleton_tag {
+            width: 15%;
+            height: 25px;
+            background-color: lightgray;
+            border-radius: 5px;
+            margin: 0px 5px;
+          }
+        }
+        .skeleton_date {
+          display: flex;
+          justify-content: flex-end;
+          border-bottom: 2px solid lightgray;
+          padding: 10px 0px;
+          .date {
+            width: 20%;
+            height: 25px;
+            background-color: lightgray;
+            border-radius: 5px;
+          }
+        }
+        .skeleton_comments {
+            .skeleton_comm {
+              background-color: whitesmoke;
+              margin: 5px 0px;
+              border-radius: 10px;
+              padding: 10px;
+              display: flex;
+              .skeleton_comm_img {
+                width: 100px;
+                height: 100px;
+                background-color: lightgray;
+                border-radius: 50%;
+              }
+              .skeleton_comm_info {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 20px;
+                div {
+                  margin: 5px 0px;
+                  width: 30%;
+                  height: 25px;
+                  background-color: lightgray;
+                  border-radius: 5px;
+                }
+              }
+            }
+        }
+      }
+    }
+    .post_details_wrapper {
+      display: flex;
+      min-height: 85vh;
     .details_image {
       width: 40%;
       padding: 20px;
@@ -230,6 +347,15 @@
             font-size: 25px;
           }
         }
+        .details_tags {
+          span {
+            background-color: crimson;
+            color: white;
+            margin: 0px 5px;
+            padding: 3px 8px;
+            border-radius: 5px;
+          }
+        }
         .details_data {
           display: flex;
           justify-content: flex-end;
@@ -238,7 +364,40 @@
           }
         }
       }
+      .details_comments {
+        h3 {
+          padding: 10px 0px;
+          font-weight: 200;
+          text-align: center;
+        }
+        .comment {
+          background-color: whitesmoke;
+          margin: 5px 0px;
+          border-radius: 10px;
+          padding: 10px;
+          .comment_info {
+            display: flex;
+            .comment_pic {
+              margin-right: 20px;
+              img {
+                border-radius: 50%;
+              }
+            }
+            .comment_time_name {
+              display: flex;
+              flex-direction: column;
+              .comment_date {
+                color: orange;
+              }
+            }
+          }
+          .comment_msg {
+            padding: 10px 0px;
+          }
+        }
+      }
     }
+  }
   }
   .footer {
     padding: 10px 0px;
@@ -248,4 +407,5 @@
       font-size: 18px;
     }
   }
+  
 }

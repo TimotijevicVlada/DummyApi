@@ -224,6 +224,11 @@
 
 .App .posts .posts_container .link .post .post_info .post_content .keyword span {
   font-size: 14px;
+  background-color: crimson;
+  color: white;
+  margin: 0px 5px;
+  padding: 2px 5px;
+  border-radius: 5px;
 }
 
 .App .posts .posts_container .link .post .post_info .post_content .likes i {
@@ -245,53 +250,207 @@
   color: orange;
 }
 
-.App .post_details {
+.App .post_details .details_skeleton {
+  min-height: 85vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .post_details .details_skeleton .skeleton_img {
+  width: 40%;
+  padding: 20px 40px;
+}
+
+.App .post_details .details_skeleton .skeleton_img .skeleton_image {
+  height: 550px;
+  border-radius: 15px;
+  background-color: lightgray;
+}
+
+.App .post_details .details_skeleton .skeleton_info {
+  width: 60%;
+  padding: 20px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_title_wrapper {
+  width: 100%;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_title_wrapper .skeleton_title {
+  height: 25px;
+  width: 30%;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_text_wrapper {
+  padding: 50px 0px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_text_wrapper .skeleton_text {
+  width: 100%;
+  height: 25px;
+  background-color: lightgray;
+  margin: 5px 0px;
+  border-radius: 5px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_author .skeleton_author_image {
+  width: 120px;
+  height: 120px;
+  background-color: lightgray;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_author .skeleton_author_name {
+  width: 30%;
+  height: 25px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_tags .skeleton_tag {
+  width: 15%;
+  height: 25px;
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: 0px 5px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-bottom: 2px solid lightgray;
+  padding: 10px 0px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_date .date {
+  width: 20%;
+  height: 25px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_comments .skeleton_comm {
+  background-color: whitesmoke;
+  margin: 5px 0px;
+  border-radius: 10px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_comments .skeleton_comm .skeleton_comm_img {
+  width: 100px;
+  height: 100px;
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_comments .skeleton_comm .skeleton_comm_info {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 20px;
+}
+
+.App .post_details .details_skeleton .skeleton_info .skeleton_comments .skeleton_comm .skeleton_comm_info div {
+  margin: 5px 0px;
+  width: 30%;
+  height: 25px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.App .post_details .post_details_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   min-height: 85vh;
 }
 
-.App .post_details .details_image {
+.App .post_details .post_details_wrapper .details_image {
   width: 40%;
   padding: 20px;
 }
 
-.App .post_details .details_image img {
+.App .post_details .post_details_wrapper .details_image img {
   width: 100%;
   border-radius: 15px;
 }
 
-.App .post_details .details_info {
+.App .post_details .post_details_wrapper .details_info {
   width: 60%;
   padding: 20px;
 }
 
-.App .post_details .details_info .details_info_upper {
+.App .post_details .post_details_wrapper .details_info .details_info_upper {
   border-bottom: 2px solid lightgray;
 }
 
-.App .post_details .details_info .details_info_upper .details_title {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_title {
   text-align: center;
 }
 
-.App .post_details .details_info .details_info_upper .details_title h1 {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_title h1 {
   font-weight: 200;
 }
 
-.App .post_details .details_info .details_info_upper .details_title h1::first-letter {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_title h1::first-letter {
   text-transform: uppercase;
 }
 
-.App .post_details .details_info .details_info_upper .details_fulltext {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_fulltext {
   padding: 10px 0px;
 }
 
-.App .post_details .details_info .details_info_upper .details_fulltext p::first-letter {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_fulltext p::first-letter {
   text-transform: uppercase;
 }
 
-.App .post_details .details_info .details_info_upper .details_author {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_author {
   padding: 10px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -301,31 +460,39 @@
           align-items: center;
 }
 
-.App .post_details .details_info .details_info_upper .details_author img {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_author img {
   border-radius: 50%;
   margin-right: 20px;
 }
 
-.App .post_details .details_info .details_info_upper .details_author .author_name {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_author .author_name {
   font-size: 22px;
   margin-left: 5px;
 }
 
-.App .post_details .details_info .details_info_upper .details_likes {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_likes {
   padding: 10px 0px;
 }
 
-.App .post_details .details_info .details_info_upper .details_likes i {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_likes i {
   font-size: 30px;
   margin-right: 10px;
   color: red;
 }
 
-.App .post_details .details_info .details_info_upper .details_likes span {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_likes span {
   font-size: 25px;
 }
 
-.App .post_details .details_info .details_info_upper .details_data {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_tags span {
+  background-color: crimson;
+  color: white;
+  margin: 0px 5px;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_data {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,8 +501,53 @@
           justify-content: flex-end;
 }
 
-.App .post_details .details_info .details_info_upper .details_data span {
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_data span {
   color: orange;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments h3 {
+  padding: 10px 0px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment {
+  background-color: whitesmoke;
+  margin: 5px 0px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment .comment_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment .comment_info .comment_pic {
+  margin-right: 20px;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment .comment_info .comment_pic img {
+  border-radius: 50%;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment .comment_info .comment_time_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment .comment_info .comment_time_name .comment_date {
+  color: orange;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment .comment_msg {
+  padding: 10px 0px;
 }
 
 .App .footer {
