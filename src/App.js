@@ -15,17 +15,17 @@ function App() {
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [details, setDetails] = useState({ owner: {}, tags: [] });
+  const [details, setDetails] = useState({});
   const [detailsId, setDetailsId] = useState("");
   const [favorite, setFavorite] = useState([]);
   const [favoriteNumber, setFavoriteNumber] = useState(0);
 
+  //Function that fetch posts from API
   const fetchData = async () => {
     try {
         const response = await fetch(`https://dummyapi.io/data/v1/post`, {headers: {'app-id': APP_ID}});
         const data = await response.json();
         setPosts(data.data)
-        console.log(data.data)
         setLoading(false);
     } catch (err) {
       console.log(err);
@@ -37,6 +37,7 @@ function App() {
     fetchData();
   }, [])
 
+  //Function to delete post from favorite
   const deleteFav = (post) => {
     const deletePost = favorite.filter(item => item.id !== post.id);
     setFavorite(deletePost);
@@ -73,31 +74,6 @@ function App() {
   useEffect(() => {
     saveFavoriteLocaleStorage();
   }, [saveFavoriteLocaleStorage])
-
-  //Function that get details info from storage
-  const getDetailsStorage = () => {
-    if(localStorage.getItem("postDetails") === null) {
-      localStorage.setItem("postDetails", JSON.stringify({ owner: {}, tags: [] }));
-    } else {
-      const detailsStorage = JSON.parse(localStorage.getItem("postDetails"));
-      setDetails(detailsStorage);
-    }
-  }
-
-  useEffect(() => {
-    getDetailsStorage();
-  }, [])
-
-  //Function that set the details storage
-  const saveDetailsStorage = useCallback( () => {
-    localStorage.setItem("postDetails", JSON.stringify(details));
-  }, [details])
-
-  useEffect(() => {
-    saveDetailsStorage();
-  }, [saveDetailsStorage])
-
-  console.log(details)
 
   return (
     <Router>

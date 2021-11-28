@@ -452,7 +452,6 @@
             justify-content: space-between;
             margin: 10px 0px;
             h3 {
-            
               font-weight: 200;
               margin-left: 20px;
               text-align: center;
@@ -548,32 +547,31 @@
         display: flex;
         flex: 8;
         .fav_image {
-        margin-right: 20px;
-        img {
-          width: 150px;
-          border-radius: 10px;
-        }
-      }
-      .fav_author {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .fav_author_name {
-          font-size: 18px;
-        }
-        .fav_text {
-          &::first-letter {
-            text-transform: uppercase;
+          margin-right: 20px;
+          img {
+            width: 150px;
+            border-radius: 10px;
           }
         }
-        .fav_date {
-          color: orange;
+        .fav_author {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .fav_author_name {
+            font-size: 18px;
+          }
+          .fav_text {
+            &::first-letter {
+              text-transform: uppercase;
+            }
+          }
+          .fav_date {
+            color: orange;
+          }
         }
-      }
       }
       .delete_btn {
         flex: 4;
-       
         .view_details {
           font-size: 20px;
           padding: 5px 10px;
@@ -640,20 +638,20 @@
             }
           }
           i {
-              color: green;
-              font-size: 18px;
-              margin-right: 10px;
-              cursor: pointer;
-            }
-            button {
-              width: 100%;
-              font-size: 16px;
-              padding: 10px 0px;
-              border: none;
-              border-radius: 10px;
-              background-color: lightgray;
-              cursor: pointer;
-            }
+            color: green;
+            font-size: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+          }
+          button {
+            width: 100%;
+            font-size: 16px;
+            padding: 10px 0px;
+            border: none;
+            border-radius: 10px;
+            background-color: lightgray;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -664,6 +662,123 @@
     text-align: center;
     span {
       font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .App {
+    .posts {
+      padding: 0px 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    .posts {
+      padding: 0px 10px;
+      .post_skeleton {
+        .skeleton_item {
+          width: 500px;
+        }
+      }
+      .posts_container {
+        .link {
+          width: 500px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    .posts {
+      padding: 0px;
+    }
+    .post_details {
+      .details_skeleton {
+        flex-direction: column;
+        .skeleton_img {
+          width: 100%;
+          .skeleton_image {
+            height: 400px;
+          }
+        }
+        .skeleton_info {
+          width: 100%;
+        }
+      }
+      .post_details_wrapper {
+        flex-direction: column;
+        align-items: center;
+        .details_image {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          img {
+            width: 80%;
+          }
+        }
+        .details_info {
+          width: 100%;
+        }
+      }
+    }
+    .favorite {
+      margin: 0px 5px;
+      .favorite_post {
+        .fav_left {
+          flex: 10;
+        }
+        .delete_btn {
+          flex: 2;
+          .view_details {
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
+          .delete {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .App {
+    .posts {
+      .post_skeleton {
+        .skeleton_item {
+          width: 90%;
+          flex-direction: column;
+          .skeleton_image {
+            width: 100%;
+          }
+          .skeleton_info {
+            width: 100%;
+          }
+        }
+      }
+      .posts_container {
+        .link {
+          width: 90%;
+          .post {
+            flex-direction: column;
+            align-items: center;
+            .post_image {
+              width: 90%;
+             border-radius: 12px;
+             overflow: hidden;
+            }
+            .post_info {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 }

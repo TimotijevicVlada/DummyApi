@@ -907,4 +907,123 @@
 .App .footer span {
   font-size: 18px;
 }
+
+@media screen and (max-width: 1250px) {
+  .App .posts {
+    padding: 0px 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .App .posts {
+    padding: 0px 10px;
+  }
+  .App .posts .post_skeleton .skeleton_item {
+    width: 500px;
+  }
+  .App .posts .posts_container .link {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App .posts {
+    padding: 0px;
+  }
+  .App .post_details .details_skeleton {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App .post_details .details_skeleton .skeleton_img {
+    width: 100%;
+  }
+  .App .post_details .details_skeleton .skeleton_img .skeleton_image {
+    height: 400px;
+  }
+  .App .post_details .details_skeleton .skeleton_info {
+    width: 100%;
+  }
+  .App .post_details .post_details_wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App .post_details .post_details_wrapper .details_image {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .App .post_details .post_details_wrapper .details_image img {
+    width: 80%;
+  }
+  .App .post_details .post_details_wrapper .details_info {
+    width: 100%;
+  }
+  .App .favorite {
+    margin: 0px 5px;
+  }
+  .App .favorite .favorite_post .fav_left {
+    -webkit-box-flex: 10;
+        -ms-flex: 10;
+            flex: 10;
+  }
+  .App .favorite .favorite_post .delete_btn {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+  }
+  .App .favorite .favorite_post .delete_btn .view_details {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .App .favorite .favorite_post .delete_btn .delete {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .App .posts .post_skeleton .skeleton_item {
+    width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App .posts .post_skeleton .skeleton_item .skeleton_image {
+    width: 100%;
+  }
+  .App .posts .post_skeleton .skeleton_item .skeleton_info {
+    width: 100%;
+  }
+  .App .posts .posts_container .link {
+    width: 90%;
+  }
+  .App .posts .posts_container .link .post {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App .posts .posts_container .link .post .post_image {
+    width: 90%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .App .posts .posts_container .link .post .post_info {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=App.css.map */

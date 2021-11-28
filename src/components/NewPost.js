@@ -15,7 +15,7 @@ const NewPost = () => {
                         <input type="text" placeholder="Create text"/>
                     </div>
                     <div>
-                        <i class="fas fa-plus-circle"></i>
+                        <i className="fas fa-plus-circle"></i>
                         <span>Add photo</span>
                     </div>
                     <div className="create_post_btn">

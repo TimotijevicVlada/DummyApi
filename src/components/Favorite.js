@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Favorite = ({ favorite, deleteFav, setDetailsId }) => {
-  console.log(favorite);
+  
   return (
     <div className="favorite">
         <h2 className="favorite_title">
@@ -25,7 +25,7 @@ const Favorite = ({ favorite, deleteFav, setDetailsId }) => {
           <div className="delete_btn">
             <button onClick={() => setDetailsId(item.id)} className="view_details">
                 <Link to={`/${item.id}`} className="link">
-                    View details
+                    Details
                 </Link>
             </button>
             <button onClick={() => deleteFav(item)} className="delete">Delete</button>

@@ -6,6 +6,8 @@ const PostsDetails = ({ detailsId, APP_ID, favorite, setFavorite, details, setDe
   const [detailsLoading, setDetailsLoading] = useState(true);
   const [editPostVisibility, setEditPostVisibility] = useState(false);
 
+
+  //Function for fetching details info from API
   const fetchDetails = useCallback( async () => {
     try {
       const response = await fetch(
@@ -24,6 +26,7 @@ const PostsDetails = ({ detailsId, APP_ID, favorite, setFavorite, details, setDe
     fetchDetails();
   }, [fetchDetails]);
 
+  //Funtion that update post 
   const handleSubmit = (e) => {
     e.preventDefault();
     setDetails({...details, publishDate: new Date().toDateString()});
