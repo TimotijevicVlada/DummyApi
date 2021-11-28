@@ -17,7 +17,7 @@ const Navbar = ({favoriteNumber}) => {
                         {favoriteNumber > 0 ? <span className="fav_num">{favoriteNumber}</span> : ""}
                     </i>
                 </Link>
-                <Link to="/newpost" className="link">
+                <Link to="/create" className="link">
                     <i className="fas fa-plus-circle"></i>
                 </Link>
             </div>

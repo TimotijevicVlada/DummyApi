@@ -83,7 +83,7 @@ function App() {
           <Route path="/" element={<Posts posts={posts} loading={loading} setDetailsId={setDetailsId}/>}/>
           <Route path="/:id" element={<PostsDetails setFavoriteNumber={setFavoriteNumber} details={details} setDetails={setDetails} detailsId={detailsId} APP_ID={APP_ID} favorite={favorite} setFavorite={setFavorite}/>}/>
           <Route path="/favorite" element={<Favorite favorite={favorite} deleteFav={deleteFav} setDetailsId={setDetailsId}/>}/>
-          <Route path="/newpost" element={<NewPost/>}/>
+          <Route path="/create" element={<NewPost/>}/>
         </Routes>
         <Footer />
       </div>

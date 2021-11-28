@@ -5,6 +5,8 @@ const Comments = ({APP_ID, detailsId}) => {
     const [comments, setComments] = useState([]);
     const [commentVisibility, setCommentVisibility] = useState(false);
 
+
+    //Function that fetch the comment for each post
     const fetchComments = useCallback(async () => {
         const res = await fetch(
           `https://dummyapi.io/data/v1/post/${detailsId}/comment`,
