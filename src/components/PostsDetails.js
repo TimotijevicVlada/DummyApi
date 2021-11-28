@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import DetailsSkeleton from "./DetailsSkeleton";
+import Comments from "./Comments";
 
 const PostsDetails = ({ detailsId, APP_ID }) => {
   const [details, setDetails] = useState({ owner: {}, tags: [] });
-  const [comments, setComments] = useState([]);
   const [detailsLoading, setDetailsLoading] = useState(true);
+  const [editPostVisibility, setEditPostVisibility] = useState(false);
 
   const fetchDetails = useCallback(async () => {
     try {
@@ -13,8 +14,8 @@ const PostsDetails = ({ detailsId, APP_ID }) => {
         { headers: { "app-id": APP_ID } }
       );
       const data = await response.json();
-      setDetails(data);
       console.log(data);
+      setDetails(data);
       setDetailsLoading(false);
     } catch (err) {
       console.log(err);
@@ -25,19 +26,11 @@ const PostsDetails = ({ detailsId, APP_ID }) => {
     fetchDetails();
   }, [fetchDetails]);
 
-  const fetchComments = useCallback(async () => {
-    const res = await fetch(
-      `https://dummyapi.io/data/v1/post/${detailsId}/comment`,
-      { headers: { "app-id": APP_ID } }
-    );
-    const results = await res.json();
-    console.log(results.data);
-    setComments(results.data);
-  }, [APP_ID, detailsId]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setDetails({...details, publishDate: new Date().toDateString()});
+  }
 
-  useEffect(() => {
-    fetchComments();
-  }, [fetchComments]);
 
   return (
     <div className="post_details">
@@ -52,10 +45,16 @@ const PostsDetails = ({ detailsId, APP_ID }) => {
             <div className="details_info_upper">
               <div className="details_title">
                 <h1>{details.tags ? details.tags[0] : ""}</h1>
+                
               </div>
               <div className="details_fulltext">
                 <p>{details.text}</p>
+                <button onClick={() => setEditPostVisibility(true)}>Edit post</button>
               </div>
+              <form onSubmit={handleSubmit} className={editPostVisibility ? "update_post" : "update_post_visible" }>
+                <input onChange={(e) => setDetails({...details, text: e.target.value})} type="text" placeholder="Change text..." />
+                <button onClick={() => setEditPostVisibility(false)}>Update</button>
+              </form>
               <div className="details_author">
                 <img src={details.owner.picture} alt="" />
                 <span>{details.owner.title} </span>
@@ -77,36 +76,7 @@ const PostsDetails = ({ detailsId, APP_ID }) => {
                 <span>{new Date(details.publishDate).toDateString()}</span>
               </div>
             </div>
-            <div className="details_comments">
-              <h3>Comments</h3>
-              {comments.length < 1 ? (
-                <h3>There is no comment yet..</h3>
-              ) : (
-                comments.map((item) => (
-                  <div className="comment" key={item.id}>
-                    <div className="comment_info">
-                      <div className="comment_pic">
-                        <img
-                          src={item.owner.picture}
-                          alt={item.owner.firstName}
-                        />
-                      </div>
-                      <div className="comment_time_name">
-                        <span>
-                          {item.owner.title} {item.owner.firstName}{" "}
-                          {item.owner.lastName}
-                        </span>
-                        <span className="comment_date">
-                          {new Date(item.publishDate).toDateString()}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="comment_msg">
-                      <p>{item.message}</p>
-                    </div>
-                  </div>
-                )))}
-            </div>
+            <Comments detailsId={detailsId} APP_ID={APP_ID}/>
           </div>
         </div>
       )}

@@ -6,6 +6,10 @@ const Posts = ({ posts, loading, setDetailsId }) => {
 
   return (
     <div className="posts">
+      <div className="title">
+        <h2>Posts</h2>
+        <button>Add new post</button>
+      </div>
       {loading ? (
         <PostSkeleton />
       ) : (

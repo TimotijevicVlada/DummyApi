@@ -123,6 +123,25 @@
   border-radius: 5px;
 }
 
+.App .posts .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .posts .title h2 {
+  -webkit-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
+  text-align: center;
+}
+
+.App .posts .title button {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
 .App .posts .posts_container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -444,10 +463,62 @@
 
 .App .post_details .post_details_wrapper .details_info .details_info_upper .details_fulltext {
   padding: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .App .post_details .post_details_wrapper .details_info .details_info_upper .details_fulltext p::first-letter {
   text-transform: uppercase;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_fulltext button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_info_upper .update_post {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_info_upper .update_post input {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_info_upper .update_post input:focus {
+  outline: none;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_info_upper .update_post button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_info_upper .update_post_visible {
+  display: none;
 }
 
 .App .post_details .post_details_wrapper .details_info .details_info_upper .details_author {
@@ -505,10 +576,64 @@
   color: orange;
 }
 
-.App .post_details .post_details_wrapper .details_info .details_comments h3 {
-  padding: 10px 0px;
+.App .post_details .post_details_wrapper .details_info .details_comments .comment_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0px;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment_header h3 {
   font-weight: 200;
+  margin-left: 20px;
   text-align: center;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment_header button {
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .add_comment {
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .add_comment input {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .add_comment input:focus {
+  outline: none;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .add_comment .add {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_comments .comment_unvisible {
+  display: none;
 }
 
 .App .post_details .post_details_wrapper .details_info .details_comments .comment {

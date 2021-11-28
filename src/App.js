@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 function App() {
 
   const APP_ID = "61a113efd238b67ee530d34b";
@@ -18,8 +19,8 @@ function App() {
     try {
         const response = await fetch(`https://dummyapi.io/data/v1/post`, {headers: {'app-id': APP_ID}});
         const data = await response.json();
-        console.log(data.data);
         setPosts(data.data)
+        console.log(data.data)
         setLoading(false);
     } catch (err) {
       console.log(err);
@@ -30,7 +31,6 @@ function App() {
   useEffect(() => {
     fetchData();
   }, [])
-
 
 
   return (
