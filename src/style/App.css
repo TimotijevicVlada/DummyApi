@@ -54,7 +54,7 @@
   top: -10px;
   right: -10px;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 16px;
   background-color: white;
   width: 18px;
   height: 18px;
@@ -596,7 +596,7 @@
 }
 
 .App .post_details .post_details_wrapper .details_info .details_info_upper .details_tags span {
-  background-color: crimson;
+  background-color: gray;
   color: white;
   margin: 0px 5px;
   padding: 3px 8px;
@@ -720,6 +720,18 @@
   margin: 0px 50px;
 }
 
+.App .favorite .favorite_title {
+  text-align: center;
+  font-weight: 200;
+  padding: 20px 0px;
+}
+
+.App .favorite .no_fav_posts {
+  text-align: center;
+  padding: 40px 0px;
+  font-weight: 200;
+}
+
 .App .favorite .favorite_post {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -749,6 +761,7 @@
 
 .App .favorite .favorite_post .fav_left .fav_image img {
   width: 150px;
+  border-radius: 10px;
 }
 
 .App .favorite .favorite_post .fav_left .fav_author {

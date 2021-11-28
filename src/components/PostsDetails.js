@@ -6,7 +6,7 @@ const PostsDetails = ({ detailsId, APP_ID, favorite, setFavorite, details, setDe
   const [detailsLoading, setDetailsLoading] = useState(true);
   const [editPostVisibility, setEditPostVisibility] = useState(false);
 
-  const fetchDetails = useCallback(async () => {
+  const fetchDetails = useCallback( async () => {
     try {
       const response = await fetch(
         `https://dummyapi.io/data/v1/post/${detailsId}`,
@@ -37,10 +37,11 @@ const PostsDetails = ({ detailsId, APP_ID, favorite, setFavorite, details, setDe
       alert("This post is already in the favorite!");
     } else {
       setFavorite([...favorite, { ...post }]);
-      setFavoriteNumber(favorite.length)
     }
+    setFavoriteNumber(favorite.length)
   };
 
+  
 
   return (
     <div className="post_details">

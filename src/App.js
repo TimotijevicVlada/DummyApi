@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import './style/App.css';
 import Posts from './components/Posts';
 import PostsDetails from './components/PostsDetails';
@@ -42,6 +42,62 @@ function App() {
     setFavorite(deletePost);
   }
 
+  //Function that display total favorite number in the navbar
+  const displayTotalFavNum = useCallback( () => {
+    setFavoriteNumber(favorite.length);
+  }, [favorite])
+  
+  useEffect(() => {
+    displayTotalFavNum();
+  }, [displayTotalFavNum])
+
+  //Function that get local storage info and send to favorite state
+  const getFavoriteItem = () => {
+    if(localStorage.getItem("posts") === null) {
+      localStorage.setItem("posts", JSON.stringify([]));
+    } else {
+      const favLocalStorage = JSON.parse(localStorage.getItem("posts"));
+      setFavorite(favLocalStorage);
+    }
+  }
+
+  useEffect(() => {
+    getFavoriteItem();
+  }, [])
+
+  //Function that save favorite item to locale storage
+  const saveFavoriteLocaleStorage = useCallback( () => {
+    localStorage.setItem("posts", JSON.stringify(favorite));
+  }, [favorite])
+
+  useEffect(() => {
+    saveFavoriteLocaleStorage();
+  }, [saveFavoriteLocaleStorage])
+
+  //Function that get details info from storage
+  const getDetailsStorage = () => {
+    if(localStorage.getItem("postDetails") === null) {
+      localStorage.setItem("postDetails", JSON.stringify({ owner: {}, tags: [] }));
+    } else {
+      const detailsStorage = JSON.parse(localStorage.getItem("postDetails"));
+      setDetails(detailsStorage);
+    }
+  }
+
+  useEffect(() => {
+    getDetailsStorage();
+  }, [])
+
+  //Function that set the details storage
+  const saveDetailsStorage = useCallback( () => {
+    localStorage.setItem("postDetails", JSON.stringify(details));
+  }, [details])
+
+  useEffect(() => {
+    saveDetailsStorage();
+  }, [saveDetailsStorage])
+
+  console.log(details)
 
   return (
     <Router>
@@ -50,7 +106,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Posts posts={posts} loading={loading} setDetailsId={setDetailsId}/>}/>
           <Route path="/:id" element={<PostsDetails setFavoriteNumber={setFavoriteNumber} details={details} setDetails={setDetails} detailsId={detailsId} APP_ID={APP_ID} favorite={favorite} setFavorite={setFavorite}/>}/>
-          <Route path="/favorite" element={<Favorite favorite={favorite} deleteFav={deleteFav} setDetails={setDetails}/>}/>
+          <Route path="/favorite" element={<Favorite favorite={favorite} deleteFav={deleteFav} setDetailsId={setDetailsId}/>}/>
           <Route path="/newpost" element={<NewPost/>}/>
         </Routes>
         <Footer />

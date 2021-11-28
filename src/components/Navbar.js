@@ -14,7 +14,7 @@ const Navbar = ({favoriteNumber}) => {
                 </Link>
                 <Link to="/favorite" className="link">
                     <i className="fas fa-heart">
-                        <span className="fav_num">{favoriteNumber}</span>
+                        {favoriteNumber > 0 ? <span className="fav_num">{favoriteNumber}</span> : ""}
                     </i>
                 </Link>
                 <Link to="/newpost" className="link">

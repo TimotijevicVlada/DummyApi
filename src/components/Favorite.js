@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Favorite = ({ favorite, deleteFav, setDetails }) => {
+const Favorite = ({ favorite, deleteFav, setDetailsId }) => {
   console.log(favorite);
   return (
     <div className="favorite">
-      {favorite.map((item) => (
+        <h2 className="favorite_title">
+            Favorite posts
+        </h2>
+      {favorite.length < 1 ? <h2 className="no_fav_posts">There is no favorite posts!</h2> : favorite.map((item) => (
         <div key={item.id} className="favorite_post">
           <div className="fav_left">
             <div className="fav_image">
@@ -20,7 +23,7 @@ const Favorite = ({ favorite, deleteFav, setDetails }) => {
             </div>
           </div>
           <div className="delete_btn">
-            <button onClick={() => setDetails(item)} className="view_details">
+            <button onClick={() => setDetailsId(item.id)} className="view_details">
                 <Link to={`/${item.id}`} className="link">
                     View details
                 </Link>
