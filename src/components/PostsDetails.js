@@ -2,8 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import DetailsSkeleton from "./DetailsSkeleton";
 import Comments from "./Comments";
 
-const PostsDetails = ({ detailsId, APP_ID }) => {
-  const [details, setDetails] = useState({ owner: {}, tags: [] });
+const PostsDetails = ({ detailsId, APP_ID, favorite, setFavorite, details, setDetails, setFavoriteNumber }) => {
   const [detailsLoading, setDetailsLoading] = useState(true);
   const [editPostVisibility, setEditPostVisibility] = useState(false);
 
@@ -14,13 +13,12 @@ const PostsDetails = ({ detailsId, APP_ID }) => {
         { headers: { "app-id": APP_ID } }
       );
       const data = await response.json();
-      console.log(data);
       setDetails(data);
       setDetailsLoading(false);
     } catch (err) {
       console.log(err);
     }
-  }, [detailsId, APP_ID]);
+  }, [detailsId, APP_ID, setDetails]);
 
   useEffect(() => {
     fetchDetails();
@@ -30,6 +28,18 @@ const PostsDetails = ({ detailsId, APP_ID }) => {
     e.preventDefault();
     setDetails({...details, publishDate: new Date().toDateString()});
   }
+
+
+  //Add post to the Favorite
+  const addToFav = (post) => {
+    const exist = favorite.find((item) => item.id === post.id);
+    if (exist) {
+      alert("This post is already in the favorite!");
+    } else {
+      setFavorite([...favorite, { ...post }]);
+      setFavoriteNumber(favorite.length)
+    }
+  };
 
 
   return (
@@ -45,7 +55,9 @@ const PostsDetails = ({ detailsId, APP_ID }) => {
             <div className="details_info_upper">
               <div className="details_title">
                 <h1>{details.tags ? details.tags[0] : ""}</h1>
-                
+              </div>
+              <div className="details_add_to_fav">
+                <button onClick={() => addToFav(details)}>Add to favorite</button>
               </div>
               <div className="details_fulltext">
                 <p>{details.text}</p>

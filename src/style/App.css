@@ -31,6 +31,15 @@
   color: inherit;
 }
 
+.App .navbar .navbar_pages .link .fa-heart {
+  position: relative;
+  color: red;
+}
+
+.App .navbar .navbar_pages .link .fa-plus-circle {
+  color: green;
+}
+
 .App .navbar .navbar_pages .link i {
   margin: 0px 10px;
   font-size: 25px;
@@ -38,6 +47,28 @@
 
 .App .navbar .navbar_pages .link i:hover {
   cursor: pointer;
+}
+
+.App .navbar .navbar_pages .link i .fav_num {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  font-size: 18px;
+  background-color: white;
+  width: 18px;
+  height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  color: white;
 }
 
 .App .posts {
@@ -124,22 +155,12 @@
 }
 
 .App .posts .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 10px 0px;
 }
 
 .App .posts .title h2 {
-  -webkit-box-flex: 10;
-      -ms-flex: 10;
-          flex: 10;
   text-align: center;
-}
-
-.App .posts .title button {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  font-weight: 200;
 }
 
 .App .posts .posts_container {
@@ -461,6 +482,25 @@
   text-transform: uppercase;
 }
 
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_add_to_fav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App .post_details .post_details_wrapper .details_info .details_info_upper .details_add_to_fav button {
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .App .post_details .post_details_wrapper .details_info .details_info_upper .details_fulltext {
   padding: 10px 0px;
   display: -webkit-box;
@@ -673,6 +713,176 @@
 
 .App .post_details .post_details_wrapper .details_info .details_comments .comment .comment_msg {
   padding: 10px 0px;
+}
+
+.App .favorite {
+  min-height: 85vh;
+  margin: 0px 50px;
+}
+
+.App .favorite .favorite_post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid lightgray;
+  padding: 10px 0px;
+}
+
+.App .favorite .favorite_post .fav_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+}
+
+.App .favorite .favorite_post .fav_left .fav_image {
+  margin-right: 20px;
+}
+
+.App .favorite .favorite_post .fav_left .fav_image img {
+  width: 150px;
+}
+
+.App .favorite .favorite_post .fav_left .fav_author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .favorite .favorite_post .fav_left .fav_author .fav_author_name {
+  font-size: 18px;
+}
+
+.App .favorite .favorite_post .fav_left .fav_author .fav_text::first-letter {
+  text-transform: uppercase;
+}
+
+.App .favorite .favorite_post .fav_left .fav_author .fav_date {
+  color: orange;
+}
+
+.App .favorite .favorite_post .delete_btn {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+.App .favorite .favorite_post .delete_btn .view_details {
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightgray;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.App .favorite .favorite_post .delete_btn .view_details .link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.App .favorite .favorite_post .delete_btn .view_details:hover {
+  background: gray;
+}
+
+.App .favorite .favorite_post .delete_btn .delete {
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+.App .favorite .favorite_post .delete_btn .delete:hover {
+  background-color: #ff7474;
+}
+
+.App .newPost {
+  min-height: 85vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .newPost .newpost_form {
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .newPost .newpost_form .newpost_title h3 {
+  text-align: center;
+  font-weight: 200;
+}
+
+.App .newPost .newpost_form .newpost_content div {
+  margin: 12px 0px;
+}
+
+.App .newPost .newpost_form .newpost_content div input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.App .newPost .newpost_form .newpost_content div input:focus {
+  outline: none;
+}
+
+.App .newPost .newpost_form .newpost_content div i {
+  color: green;
+  font-size: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.App .newPost .newpost_form .newpost_content div button {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 10px;
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 .App .footer {

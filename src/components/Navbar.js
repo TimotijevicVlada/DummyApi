@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({favoriteNumber}) => {
+
     return (
         <div className="navbar">
             <div className="logo">
@@ -12,9 +13,13 @@ const Navbar = () => {
                     <i className="fas fa-home"></i>
                 </Link>
                 <Link to="/favorite" className="link">
-                    <i className="fas fa-heart"></i>
+                    <i className="fas fa-heart">
+                        <span className="fav_num">{favoriteNumber}</span>
+                    </i>
                 </Link>
-                
+                <Link to="/newpost" className="link">
+                    <i className="fas fa-plus-circle"></i>
+                </Link>
             </div>
         </div>
     )
