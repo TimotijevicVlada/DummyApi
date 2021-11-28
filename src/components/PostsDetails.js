@@ -65,7 +65,10 @@ const PostsDetails = ({ detailsId, APP_ID, favorite, setFavorite, details, setDe
               </div>
               <div className="details_fulltext">
                 <p>{details.text}</p>
-                <button onClick={() => setEditPostVisibility(true)}>Edit post</button>
+                <div className="edit_post_text">
+                  <button onClick={() => setEditPostVisibility(true)}>Edit post</button>
+                </div>
+                
               </div>
               <form onSubmit={handleSubmit} className={editPostVisibility ? "update_post" : "update_post_visible" }>
                 <input onChange={(e) => setDetails({...details, text: e.target.value})} type="text" placeholder="Change text..." />

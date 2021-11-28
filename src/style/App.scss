@@ -779,6 +779,66 @@
           }
         }
       }
+      .post_details {
+        .post_details_wrapper {
+          .details_info {
+            .details_info_upper {
+              .details_fulltext {
+                border: 1px solid black;
+              }
+            }
+          }
+        }
+      }
+    }
+    .post_details {
+      .post_details_wrapper {
+        .details_info {
+          .details_info_upper {
+            .details_fulltext {
+              p {
+                width: 75%;
+              }
+            }
+            .details_data {
+              padding: 10px 0px;
+            }
+          }
+        }
+      }
+    }
+    .favorite {
+      .favorite_post {
+        flex-direction: column;
+        .fav_left {
+          flex-direction: column;
+          align-items: center;
+          flex: 12;
+          .fav_image {
+            display: flex;
+            justify-content: center;
+            margin-right: 0px;
+            img {
+              width: 80%;
+    
+            }
+          }
+          .fav_author {
+            align-items: center;
+            .fav_author_name {
+              font-size: 18px;
+            }
+            .fav_text {
+             text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .newPost {
+      .newpost_form {
+        width: 90%;
+      }
     }
   }
 }

@@ -1025,5 +1025,58 @@
   .App .posts .posts_container .link .post .post_info {
     width: 100%;
   }
+  .App .posts .post_details .post_details_wrapper .details_info .details_info_upper .details_fulltext {
+    border: 1px solid black;
+  }
+  .App .post_details .post_details_wrapper .details_info .details_info_upper .details_fulltext p {
+    width: 75%;
+  }
+  .App .post_details .post_details_wrapper .details_info .details_info_upper .details_data {
+    padding: 10px 0px;
+  }
+  .App .favorite .favorite_post {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App .favorite .favorite_post .fav_left {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 12;
+        -ms-flex: 12;
+            flex: 12;
+  }
+  .App .favorite .favorite_post .fav_left .fav_image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: 0px;
+  }
+  .App .favorite .favorite_post .fav_left .fav_image img {
+    width: 80%;
+  }
+  .App .favorite .favorite_post .fav_left .fav_author {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App .favorite .favorite_post .fav_left .fav_author .fav_author_name {
+    font-size: 18px;
+  }
+  .App .favorite .favorite_post .fav_left .fav_author .fav_text {
+    text-align: center;
+  }
+  .App .newPost .newpost_form {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=App.css.map */
